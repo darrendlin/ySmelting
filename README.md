@@ -1,4 +1,4 @@
-ySmelting
+ySmelting v1.0
 =========
 
 Smelting bot that smelts any (basic f2p) bars in Al Kharid! A simple (gui-less, paint-less) smelting bot that smelts any ores for you. Since this isn't on SDN yet, to use it you must be able to run local scripts. The script should support all common ores (f2p, I don't know anything about p2p). All you need to do is to change Variables.barToSmelt to the ore you wish to smelt (like "Mithril" or "Steel").
