@@ -1,0 +1,13 @@
+*.bat
+*.txt
+lib
+bin
+.classpath
+.project
+compile.bat
+.settings
+RSBot.jar
+compile.bat
+run.bat
+*.xls*
+.gitattributes
