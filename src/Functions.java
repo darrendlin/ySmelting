@@ -1,3 +1,5 @@
+import java.awt.Graphics2D;
+
 import org.powerbot.game.api.methods.Calculations;
 import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.wrappers.Locatable;
@@ -52,4 +54,24 @@ public class Functions
 		
 		return Calculations.distanceTo(locatable.getLocation()) <= distance;
 	}
+	
+	public static void printRight(Graphics2D g, String s, int x, int y)
+	{
+		g.drawString(s, x - g.getFontMetrics().stringWidth(s), y);
+	}
+	
+
+	/**
+	 * @param x Center location
+	 */
+	public static void printCenter(Graphics2D g, String s, int x, int y, int width)
+	{
+		int len = (int)g.getFontMetrics().getStringBounds(s, g).getWidth();  
+		int start = width/2 - len/2;  
+		g.drawString(s, start + x, y);
+	}
+	public static double perHour(double gained) //money or exp etc
+	{
+		return gained / ((double)Variables.timer.getElapsed()/1000.0/3600.0);
+	} 
 }

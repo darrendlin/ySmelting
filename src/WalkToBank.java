@@ -15,8 +15,9 @@ public class WalkToBank extends Node
 	@Override
 	public void execute()
 	{
-		//System.out.println("WalkToBank");
+		System.out.println("WalkToBank");
+		
 		Walking.newTilePath(Variables.bankToFurnace).reverse().traverse();
-		Task.sleep(700, 1000);
+		Task.sleep(400, 700);
 	}
 }

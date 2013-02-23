@@ -11,3 +11,6 @@ compile.bat
 run.bat
 *.xls*
 .gitattributes
+images
+*.zip
+*.jar

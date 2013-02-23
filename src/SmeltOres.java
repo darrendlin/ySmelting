@@ -5,7 +5,6 @@ import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.node.SceneEntities;
 import org.powerbot.game.api.methods.widget.Camera;
 import org.powerbot.game.api.util.Random;
-import org.powerbot.game.api.wrappers.Tile;
 import org.powerbot.game.api.wrappers.node.SceneObject;
 import org.powerbot.game.api.wrappers.widget.WidgetChild;
 
@@ -15,14 +14,19 @@ public class SmeltOres extends Node
 	@Override
 	public boolean activate()
 	{
-		return Functions.hasEnoughOres(Variables.barToMake) && Functions.closeEnough(new Tile(3274, 3190, 0), 5);
+		SceneObject furnace = SceneEntities.getNearest(Variables.furnaceIds);
+		if (furnace == null || !furnace.validate())
+			return false;
+		
+		return Functions.hasEnoughOres(Variables.barToMake) && Functions.closeEnough(furnace.getLocation(), 5);
 	}
 	
 	@Override
 	public void execute()
 	{
-		//System.out.println("SmeltOres");
-		SceneObject furnace = SceneEntities.getNearest(Variables.furnaceId);
+		System.out.println("SmeltOres");
+		
+		SceneObject furnace = SceneEntities.getNearest(Variables.furnaceIds);
 		
 		if (furnace != null)
 		{
