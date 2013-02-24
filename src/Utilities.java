@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Polygon;
 
-import org.powerbot.core.bot.Bot;
 import org.powerbot.core.script.job.Task;
 import org.powerbot.game.api.methods.Tabs;
 import org.powerbot.game.api.methods.Widgets;
@@ -157,7 +156,7 @@ public class Utilities {
 			}
 			Mouse.click(false);
 			if(Menu.isOpen() && Menu.select(s)) {
-				Dimension d = Bot.getInstance().getCanvas().getSize();
+				Dimension d = org.powerbot.core.Bot.instance().getCanvas().getSize();
 				return Mouse.move(Random.nextInt(10, d.width - 10), Random.nextInt(10, d.width - 10));
 			}
 		}
